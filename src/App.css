@@ -1,0 +1,7 @@
+.search {
+  background: linear-gradient(to right, rgb(222, 159, 170), rgb(209, 72, 209));
+}
+
+.search::placeholder {
+  color: rgb(25, 25, 25);
+}

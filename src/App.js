@@ -57,7 +57,7 @@ function App() {
             type="text"
             placeholder="Search"
             onChange={handleChange}
-            className="search px-4 py-2 bg-[#181818] rounded outline-none"
+            className="search px-4 py-2 text-black rounded outline-none"
           ></input>
         </div>
       </div>
