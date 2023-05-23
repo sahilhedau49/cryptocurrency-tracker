@@ -53,7 +53,7 @@ function App() {
             CRYPTO Tracker
           </h1>
         </div>
-        <div className="search-section my-auto">
+        <div className="search-section md:text-center my-auto">
           <label className="text-lg pr-2">Search a currency: </label>
           <input
             type="text"
@@ -63,7 +63,7 @@ function App() {
           ></input>
         </div>
       </div>
-      <div className="coin-main grid grid-cols-3 gap-x-12 lg:grid-cols-2 sm:grid-cols-1 gap-y-24 p-20 lg:p-8 sm:p-8">
+      <div className="coin-main grid grid-cols-3 gap-x-12 lg:grid-cols-2 sm:grid-cols-1 gap-y-24 md:gap-y-8 p-20 lg:p-8 sm:p-8">
         {filterCoins.map((coin) => {
           return (
             <Coin
