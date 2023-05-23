@@ -10,21 +10,34 @@ const Coin = ({
   marketCap,
 }) => {
   return (
-    <div className="coin-container">
+    <div className="coin-container rounded-2xl px-12 py-8 bg-[#181818]">
       <div className="coin-row">
-        <div className="coin">
-          <img src={image} alt="crypto image" />
-          <h1>{name}</h1>
-          <p>{symbol}</p>
+        <div className="coin flex">
+          <img className="w-[20%] " src={image} alt="crypto image" />
+          <h1 className="my-auto ml-10 font-semibold text-2xl">{name}</h1>
         </div>
-        <div className="coin-data">
-          <p>{`Price: ${price.toLocaleString()} Rs`}</p>
-          <p>{`24h Volume: ${volume.toLocaleString()} Rs`}</p>
-          <p>{`Mkt cap: ${marketCap.toLocaleString()} Rs`}</p>
+        <div className="coin-data pt-4">
+          <p className="text-xl uppercase mb-2">{symbol}</p>
+          <p className="text-lg">
+            <span className="text-slate-300 mr-2">Price:</span>
+            {price.toLocaleString()} Rs
+          </p>
+          <p className="text-lg">
+            <span className="text-slate-300 mr-2">24h Volume:</span>
+            {volume.toLocaleString()} Rs
+          </p>
+          <p className="text-lg">
+            <span className="text-slate-300 mr-2">Mkt cap:</span>
+            {marketCap.toLocaleString()} Rs
+          </p>
           {pricePercentage < 0 ? (
-            <p className="text-red-500">{pricePercentage.toFixed(2)}%</p>
+            <p className="text-red-500 text-xl">
+              {pricePercentage.toFixed(2)}%
+            </p>
           ) : (
-            <p className="text-green-500">{pricePercentage.toFixed(2)}%</p>
+            <p className="text-green-500 text-xl">
+              {pricePercentage.toFixed(2)}%
+            </p>
           )}
         </div>
       </div>
