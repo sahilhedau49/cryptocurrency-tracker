@@ -47,9 +47,11 @@ function App() {
 
   return (
     <div className="App min-h-screen bg-[#121212] text-white">
-      <div className="nav-bar flex justify-between px-20 py-6 shadow-lg shadow-[#3f3f3f]">
+      <div className="nav-bar flex md:flex-col md:px-6 justify-between px-20 py-6 shadow-lg shadow-[#3f3f3f]">
         <div className="logo">
-          <h1 className="font-semibold text-2xl ">CRYPTO Tracker</h1>
+          <h1 className="font-semibold text-2xl md:mb-4 md:text-center">
+            CRYPTO Tracker
+          </h1>
         </div>
         <div className="search-section my-auto">
           <label className="text-lg pr-2">Search a currency: </label>
@@ -61,7 +63,7 @@ function App() {
           ></input>
         </div>
       </div>
-      <div className="coin-main grid grid-cols-3 gap-x-12 gap-y-24 p-20">
+      <div className="coin-main grid grid-cols-3 gap-x-12 lg:grid-cols-2 sm:grid-cols-1 gap-y-24 p-20 lg:p-8 sm:p-8">
         {filterCoins.map((coin) => {
           return (
             <Coin
