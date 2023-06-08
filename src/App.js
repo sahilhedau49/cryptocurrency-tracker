@@ -8,6 +8,7 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
 
   // This way also works.
   //
@@ -71,6 +72,16 @@ function App() {
               onClick={() => loginWithRedirect()}
             >
               Log In
+            </button>
+          </div>
+          <div className="search-section ml-4 md:text-center my-auto">
+            <button
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
+              className="search px-4 py-2 text-black rounded outline-none"
+            >
+              Log Out
             </button>
           </div>
         </div>
