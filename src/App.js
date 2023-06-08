@@ -1,11 +1,13 @@
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import Coin from "./Coin";
 
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const { loginWithRedirect } = useAuth0();
 
   // This way also works.
   //
@@ -53,14 +55,24 @@ function App() {
             CRYPTO Tracker
           </h1>
         </div>
-        <div className="search-section md:text-center my-auto">
-          <label className="text-lg pr-2">Search a currency: </label>
-          <input
-            type="text"
-            placeholder="Search"
-            onChange={handleChange}
-            className="search px-4 py-2 text-black rounded outline-none"
-          ></input>
+        <div className="search-section flex md:text-center my-auto">
+          <div>
+            <label className="text-lg pr-2">Search a currency: </label>
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={handleChange}
+              className="search px-4 py-2 text-black rounded outline-none"
+            ></input>
+          </div>
+          <div className="search-section ml-4 md:text-center my-auto">
+            <button
+              className="search px-4 py-2 text-black rounded outline-none"
+              onClick={() => loginWithRedirect()}
+            >
+              Log In
+            </button>
+          </div>
         </div>
       </div>
       <div className="coin-main grid grid-cols-3 gap-x-12 lg:grid-cols-2 sm:grid-cols-1 gap-y-24 md:gap-y-8 p-20 lg:p-8 sm:p-8">
