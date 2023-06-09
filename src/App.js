@@ -2,10 +2,16 @@ import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Coin from "./Coin";
+import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+  const Logout = () => {
+    navigate("/");
+  };
 
   // This way also works.
   //
@@ -64,7 +70,10 @@ function App() {
             ></input>
           </div>
           <div className="search-section ml-4 md:mt-3 md:text-center my-auto">
-            <button className="search px-4 py-2 text-black rounded outline-none">
+            <button
+              className="search px-4 py-2 text-black rounded outline-none"
+              onClick={() => Logout()}
+            >
               Log Out
             </button>
           </div>
@@ -86,6 +95,7 @@ function App() {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }
