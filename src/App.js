@@ -4,29 +4,24 @@ import { useEffect, useState } from "react";
 import Coin from "./Coin";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import { signOut } from "firebase/auth";
+import { auth } from "./Firebase";
 
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
-  const navigate = useNavigate();
-  const Logout = () => {
-    navigate("/");
-  };
 
-  // This way also works.
-  //
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=50&page=1&sparkline=false&locale=en"
-  //     )
-  //     .then((res) => {
-  //       setCoins(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     });
-  // }, []);
+  const navigate = useNavigate();
+  const SignOut = async () => {
+    try {
+      await signOut(auth);
+      if (!auth.currentUser) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   const getApiData = async () => {
     try {
@@ -72,7 +67,7 @@ function App() {
           <div className="search-section ml-4 md:mt-3 md:text-center my-auto">
             <button
               className="search px-4 py-2 text-black rounded outline-none"
-              onClick={() => Logout()}
+              onClick={SignOut}
             >
               Log Out
             </button>
