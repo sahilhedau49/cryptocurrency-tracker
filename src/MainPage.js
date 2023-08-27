@@ -1,27 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
-import { auth, provider } from "./Firebase";
-import { signInWithPopup } from "firebase/auth";
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState({ name: "", photoUrl: "" });
-
-  const SignIn = async () => {
-    try {
-      const data = await signInWithPopup(auth, provider);
-      setUserData(() => {
-        userData.name = data.user.displayName;
-        userData.photoUrl = data.user.photoURL;
-      });
-      console.log(userData);
-    } catch (err) {
-      console.log(err.message);
-    }
-    if (auth.currentUser) {
-      navigate("/app");
-    }
+  const gotoLogin = () => {
+    navigate("/login");
   };
 
   return (
@@ -33,7 +17,7 @@ const MainPage = () => {
           <div className="login-btn mt-10 my-auto">
             <button
               className="search text-2xl px-8 py-2 text-black rounded outline-none"
-              onClick={() => SignIn()}
+              onClick={() => gotoLogin()}
             >
               Log In
             </button>
