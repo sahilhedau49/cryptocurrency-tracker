@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
+import "./App.css";
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -24,7 +24,6 @@ const MainPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

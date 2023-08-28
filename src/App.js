@@ -5,6 +5,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import MainPage from "./MainPage";
 import LoginPage from "./components/LoginPage";
 import DataPage from "./components/DataPage";
+import ConnectPage from "./components/ConnectPage";
 
 function App() {
   return (
@@ -13,6 +14,14 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/connect"
+            element={
+              <Protected>
+                <ConnectPage />
+              </Protected>
+            }
+          />
           <Route
             path="/app"
             element={

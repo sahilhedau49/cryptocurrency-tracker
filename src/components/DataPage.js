@@ -2,8 +2,8 @@ import "../App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Coin from "../Coin";
-import Footer from "../Footer";
 import { UserAuth } from "../context/AuthContext";
+import ConnectPage from "./ConnectPage";
 
 const DataPage = () => {
   const [coins, setCoins] = useState([]);
@@ -42,10 +42,10 @@ const DataPage = () => {
   );
 
   return (
-    <div className="App min-h-screen bg-[#121212] text-white">
+    <div className="App min-h-screen pb-20 bg-[#121212] text-white">
       <div className="nav-bar flex md:flex-col md:px-6 justify-between px-20 py-6 shadow-lg shadow-[#3f3f3f]">
-        <div className="logo">
-          <h1 className="font-semibold text-2xl md:mb-4 md:text-center">
+        <div className="logo self-center">
+          <h1 className="font-semibold gradientText text-2xl md:mb-4 md:text-center">
             CRYPTO Tracker
           </h1>
         </div>
@@ -59,14 +59,20 @@ const DataPage = () => {
               className="search px-4 py-2 text-black rounded outline-none"
             ></input>
           </div>
-          <div className="search-section ml-4 md:mt-3 md:text-center my-auto">
+          <div className="flex search-section ml-4 md:mt-3 md:text-center my-auto">
             <button
               className="search px-4 py-2 text-black rounded outline-none"
               onClick={handleSignOut}
             >
               Log Out
             </button>
-            {user?.displayName ? <p>{user.displayName}</p> : <p></p>}
+            {user?.displayName ? (
+              <p className="text-center mx-3 text-xl gradientText font-semibold self-center">
+                {user.displayName}
+              </p>
+            ) : (
+              <p></p>
+            )}
           </div>
         </div>
       </div>
@@ -86,7 +92,7 @@ const DataPage = () => {
           );
         })}
       </div>
-      <Footer />
+      <ConnectPage />
     </div>
   );
 };

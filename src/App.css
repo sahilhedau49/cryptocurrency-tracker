@@ -5,3 +5,13 @@
 .search::placeholder {
   color: rgb(25, 25, 25);
 }
+
+.gradientText {
+  background: -webkit-linear-gradient(rgb(240, 176, 187), rgb(240, 107, 240));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.alert {
+  background: rgba(255, 32, 32, 0.267);
+}
