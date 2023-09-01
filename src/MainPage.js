@@ -9,10 +9,12 @@ const MainPage = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-[#232323] text-white">
-      <div className="w-[60vw] p-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+    <div className="min-h-screen bg-[#232323] text-white">
+      <div className="w-[60vw] p-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:p-2 sm:w-[80vw]">
         <div className="text-center">
-          <h2 className="font-bold text-6xl">Crypto-Currency Tracker</h2>
+          <h2 className="font-bold text-6xl sm:text-5xl">
+            Crypto-Currency Tracker
+          </h2>
           <p className="mt-10 text-3xl">Begin your crypto analysis here. </p>
           <div className="login-btn mt-10 my-auto">
             <button
