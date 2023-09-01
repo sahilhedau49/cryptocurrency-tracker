@@ -59,9 +59,9 @@ const DataPage = () => {
               className="search px-4 py-2 text-black rounded outline-none"
             ></input>
           </div>
-          <div className="flex search-section ml-4 md:mt-3 md:text-center my-auto">
+          <div className="flex search-section ml-4 md:mt-3 md:text-center my-auto sm:flex-col-reverse sm:ml-0">
             <button
-              className="search px-4 py-2 text-black rounded outline-none"
+              className="search px-4 py-2 text-black rounded outline-none sm:p-1 sm:w-[30%] sm:mx-auto"
               onClick={handleSignOut}
             >
               Log Out

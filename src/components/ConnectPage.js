@@ -46,7 +46,7 @@ const ConnectPage = () => {
 
   return (
     <>
-      <div className="w-[40%] bg-[#181818] mx-auto p-20 rounded-3xl lg:w-[80%]">
+      <div className="w-[40%] bg-[#181818] mx-auto p-20 rounded-3xl lg:w-[80%] sm:w-[90%] sm:p-6">
         <h2 className="text-4xl mb-4 pb-4 border-b-2 border-zinc-600 font-semibold gradientText">
           Get in touch
         </h2>
