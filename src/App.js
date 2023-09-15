@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Protected from "./components/Protected";
-import { AuthContextProvider } from "./context/AuthContext";
 import MainPage from "./MainPage";
 import LoginPage from "./components/LoginPage";
 import DataPage from "./components/DataPage";
 import ConnectPage from "./components/ConnectPage";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <AuthContextProvider>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -31,7 +31,7 @@ function App() {
             }
           />
         </Routes>
-      </AuthContextProvider>
+      </BrowserRouter>
     </div>
   );
 }
